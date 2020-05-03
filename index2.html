@@ -144,23 +144,20 @@
 
 				<section data-background-video="http://opengeology.org/textbook/wp-content/uploads/2016/07/IndiaAsiaCollision.mp4?_=2" data-background-video-loop="loop" data-autoplay>
 					<div class="header-overlay">
-						<h3>Subduction</h3>
+						<h3>Collision</h3>
 					</div>
 				</section>
 
 				<section data-background-video="http://opengeology.org/textbook/wp-content/uploads/2016/07/SoAtlantic_CutwithConvect.mp4?_=3" data-background-video-loop="loop" data-autoplay>
 					<div class="header-overlay">
-						<h3>Subduction</h3>
+						<h3>Rifting</h3>
 					</div>
 				</section>
 
 
-				<section>
+				<section id="definitions">
 
-					<h3>JSON Data</h3>
-
-					<div id="id01"></div>
-
+					<h2>Vocabulary</h2>
 
 					<script>
 
@@ -175,21 +172,25 @@
 							cache: 'default'
 						};
 
-						let jsonData = fetch("json/data.json")
+						// async function getJson() {
+						// 	const res = await fetch()
+						// }
+
+						fetch("json/data.json")
 							.then(function(resp) {
 								return resp.json();
 							})
 							.then(function(data) {
+								
 								console.log(data);
+								for(var i = 0; i < data.length; i++) {
+									var obj = data[i];
+									document.getElementById('definitions').innerHTML += '<section><h3>'+obj.term+'</h3><p class="fragment fade-up">'+obj.def+'</p></section>';	
+								}
+
 							});
 
-						for(var i = 0; i < jsonData.length; i++) {
-							var obj = jsonData[i];
-							document.write(obj.def);
-						}
-
 					</script>
-
 
 				</section>
 			
