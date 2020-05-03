@@ -175,7 +175,7 @@
 							cache: 'default'
 						};
 
-						fetch("json/data.json")
+						let jsonData = fetch("json/data.json")
 							.then(function(resp) {
 								return resp.json();
 							})
@@ -183,6 +183,10 @@
 								console.log(data);
 							});
 
+						for(var i = 0; i < jsonData.length; i++) {
+							var obj = jsonData[i];
+							document.write(obj.def);
+						}
 
 					</script>
 
