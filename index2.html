@@ -166,15 +166,16 @@
 
 						"use strict";
 
-						let myInit = { method: 'GET',
-									   headers: {
-										   'Content-Type': 'application/json'
-									   },
-									   mode: 'cors',
-									   cache: 'default'
-									};
+						let myInit = {
+							method: 'GET',
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							mode: 'cors',
+							cache: 'default'
+						};
 
-						fetch(".json/data.json", myInit)
+						fetch("json/data.json")
 							.then(function(resp) {
 								return resp.json();
 							})
