@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Plate Tectonics - Study Guide</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Override Reveal.js styles -->
+		<style>
+
+			/* Title Page Slide */
+			@keyframes background-loop {
+				0%	 { background-position: 0 0; }
+				100% { background-position: 100vw 0; }
+			}
+
+			.reveal > .slides > section.title-page {
+				height: 100%;
+				width: 100%;
+				background: url('http://opengeology.org/textbook/wp-content/uploads/2017/03/ElevationWorld-1024x512.jpg');
+				animation: background-loop 45s linear infinite ;
+			}
+
+			h1.screen-reader-only {
+				font-size: 0;
+			}
+
+			svg {
+				font-family: 'Montserrat';
+				font-size: 6em;
+				font-weight: bold;
+				text-transform: uppercase;
+				transform: 1s font-size;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;       
+			}
+
+			svg rect {
+				fill: white;
+				mask: url(#mask);
+			}
+
+			/* @media screen and (max-width: 1200px) {
+				svg {
+					font-size: 4em;
+				}
+			} */
+
+			svg > rect {
+				fill: #1c1e20f5;
+			}
+
+			/* All slides */
+			.reveal {
+				background-color: #333333;
+			}
+
+			.img-container {
+				background: white;
+				width: 40%;
+				margin: auto;
+			}
+
+			.header-overlay {
+				clip-path: polygon(95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%, 5% 0%);
+				background-color: rgba(0, 0, 0, 0.8); 
+				color: #fff; 
+				padding: 1em;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="title-page">
+					<h1 class="screen-reader-only">Plate Tectonics</h1>
+					<svg height="100%" width="100%">
+						<defs>
+							<mask id="mask" x="0" y="0" 
+							height="100%" width="100%">
+								<rect x="0" y="0" 
+								height="100%" width="100%" />
+								<text x="50%" y="40%" fill="black" text-anchor="middle">Plate</text>
+								<text x="50%" y="80%" fill="black" text-anchor="middle">Tectonics</text>
+							</mask>
+						</defs>
+						<rect x="0" y="0" height="100%" width="100%" />
+					</svg>
+
+				</section>
+			
+				<section>
+					<h2>Tectonic Boundaries</h2>
+					<p>How they move</p>
+				</section>
+
+				<section>
+					<h3>Convergent</h3>
+					<p class="fragment fade-up">Convergent boundaries are places where plates move toward each other</p>
+					<div class="fragment fade-up img-container">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Oceanic-continental_destructive_plate_boundary.svg" alt="">
+					</div>
+				</section>
+				
+				<section>
+					<h3>Divergent</h3>
+					<p class="fragment fade-up">Divergent boundaries are places where plates move away from each other</p>
+					<div class="fragment fade-up img-container">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Continental-continental_constructive_plate_boundary.svg" alt="">
+					</div>
+				</section>
+
+				<section>
+					<h3>Transform</h3>
+					<p class="fragment fade-up">Transform (shear) boundaries are places where plates slide past each other</p>
+					<div class="fragment fade-up img-container">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Continental-continental_conservative_plate_boundary_opposite_directions.svg" alt="">
+					</div>
+				</section>
+
+				<section data-background-video="http://opengeology.org/textbook/wp-content/uploads/2016/07/Subduction.mp4?_=1" data-background-video-loop="loop" data-autoplay>
+					<div class="header-overlay">
+						<h3>Subduction</h3>
+					</div>
+				</section>
+
+				<section data-background-video="http://opengeology.org/textbook/wp-content/uploads/2016/07/IndiaAsiaCollision.mp4?_=2" data-background-video-loop="loop" data-autoplay>
+					<div class="header-overlay">
+						<h3>Subduction</h3>
+					</div>
+				</section>
+
+				<section data-background-video="http://opengeology.org/textbook/wp-content/uploads/2016/07/SoAtlantic_CutwithConvect.mp4?_=3" data-background-video-loop="loop" data-autoplay>
+					<div class="header-overlay">
+						<h3>Subduction</h3>
+					</div>
+				</section>
+
+
+				<section>
+
+					<h3>JSON Data</h3>
+
+					<div id="id01"></div>
+
+
+					<script>
+
+						"use strict";
+
+						let myInit = { method: 'GET',
+									   headers: {
+										   'Content-Type': 'application/json'
+									   },
+									   mode: 'cors',
+									   cache: 'default'
+									};
+
+						fetch(".json/data.json", myInit)
+							.then(function(resp) {
+								return resp.json();
+							})
+							.then(function(data) {
+								console.log(data);
+							});
+
+
+					</script>
+
+
+				</section>
+			
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				],
+
+				width: "100%",
+				height: "100%",
+				margin: 0,
+				minScale: 1,
+				maxScale: 1
+			});
+		</script>
+	</body>
+</html>
