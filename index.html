@@ -76,6 +76,7 @@
 				background: white;
 				width: 40%;
 				margin: auto;
+				padding: 0;
 			}
 
 			.header-overlay {
@@ -114,24 +115,24 @@
 
 				<section>
 					<h3>Convergent</h3>
-					<p class="fragment fade-up">Convergent boundaries are places where plates move toward each other</p>
-					<div class="fragment fade-up img-container">
+					<p>Convergent boundaries are places where plates move toward each other</p>
+					<div class="img-container">
 						<img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Oceanic-continental_destructive_plate_boundary.svg" alt="">
 					</div>
 				</section>
 				
 				<section>
 					<h3>Divergent</h3>
-					<p class="fragment fade-up">Divergent boundaries are places where plates move away from each other</p>
-					<div class="fragment fade-up img-container">
+					<p>Divergent boundaries are places where plates move away from each other</p>
+					<div class="img-container">
 						<img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Continental-continental_constructive_plate_boundary.svg" alt="">
 					</div>
 				</section>
 
 				<section>
 					<h3>Transform</h3>
-					<p class="fragment fade-up">Transform (shear) boundaries are places where plates slide past each other</p>
-					<div class="fragment fade-up img-container">
+					<p>Transform (shear) boundaries are places where plates slide past each other</p>
+					<div class="img-container">
 						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Continental-continental_conservative_plate_boundary_opposite_directions.svg" alt="">
 					</div>
 				</section>
@@ -150,14 +151,71 @@
 
 				<section data-background-video="http://opengeology.org/textbook/wp-content/uploads/2016/07/SoAtlantic_CutwithConvect.mp4?_=3" data-background-video-loop="loop" data-autoplay>
 					<div class="header-overlay">
-						<h3>Rifting</h3>
+						<h3>Spreading Center</h3>
 					</div>
 				</section>
 
+				<section>
+					<section>
+						<h3>Layers of the Earth</h3>
+					<div class="img-container">
+						<img src="http://opengeology.org/textbook/wp-content/uploads/2017/03/Earth-cutaway-schematic-english.svg_.png" alt="">
+					</div>
+					</section>
+
+					<section>
+						<img src="https://mryoung6e2lithosphere.weebly.com/uploads/7/0/8/7/70870011/earth-structure_orig.jpg" alt="">
+					</section>
+				</section>
+
+				<section>
+					<h3>Spreading Center and Subduction Zones</h3>
+					<div class="">
+						<img src="https://www.sciencemag.org/sites/default/files/styles/article_main_image_-_1280w__no_aspect_/public/earth_16x9.jpg?itok=UmyTARkW" alt="">
+					</div>
+				</section>
+
+				<section>
+					<h3>Wilson Cycle</h3>
+					<p>The cycle of opening ocean basins with rifting and seafloor spreading, then closing the basin via subduction and collision, creating a supercontinent.</p>
+		
+					<div id="muteYouTubeVideoPlayer"></div>
+					<script async src="https://www.youtube.com/iframe_api"></script>
+					<script>
+						function onYouTubeIframeAPIReady() {
+						var player;
+						player = new YT.Player('muteYouTubeVideoPlayer', {
+							videoId: 'I_q3sAcuzIY', // YouTube Video ID
+							width: 853,               // Player width (in px)
+							height: 505,              // Player height (in px)
+							playerVars: {
+							autoplay: 1,        // Auto-play the video on load
+							controls: 1,        // Show pause/play buttons in player
+							showinfo: 0,        // Hide the video title
+							modestbranding: 1,  // Hide the Youtube Logo
+							loop: 1,            // Run the video in a loop
+							fs: 0,              // Hide the full screen button
+							cc_load_policy: 0, // Hide closed captions
+							iv_load_policy: 3,  // Hide the Video Annotations
+							autohide: 0         // Hide video controls when playing
+							},
+							events: {
+							onReady: function(e) {
+								e.target.mute();
+							}
+							}
+						});
+						}
+
+						// Written by @labnol 
+					</script>
+				</section>
 
 				<section id="definitions">
 
-					<h2>Vocabulary</h2>
+					<section>
+						<h2>Vocabulary</h2>
+					</section>
 
 					<script>
 
@@ -200,9 +258,11 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
+
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
+
 			Reveal.initialize({
 				hash: true,
 				dependencies: [
@@ -218,6 +278,7 @@
 				minScale: 1,
 				maxScale: 1
 			});
+
 		</script>
 	</body>
 </html>
