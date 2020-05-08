@@ -32,7 +32,7 @@
 				height: 100%;
 				width: 100%;
 				background: url('http://opengeology.org/textbook/wp-content/uploads/2017/03/ElevationWorld-1024x512.jpg');
-				animation: background-loop 45s linear infinite ;
+				animation: background-loop 60s linear infinite ;
 			}
 
 			h1.screen-reader-only {
@@ -41,7 +41,7 @@
 
 			svg {
 				font-family: 'Montserrat';
-				font-size: 6em;
+				font-size: 5em;
 				font-weight: bold;
 				text-transform: uppercase;
 				transform: 1s font-size;
@@ -64,7 +64,13 @@
 			} */
 
 			svg > rect {
-				fill: #1c1e20f5;
+				fill: #333333;
+			}
+
+			/* youtube-slide*/
+			#muteYouTubeVideoPlayer {
+				width: 853px;
+				height: 505px;
 			}
 
 			/* All slides */
@@ -86,6 +92,9 @@
 				padding: 1em;
 			}
 
+			h2, p {
+				font-size: smaller;
+			}
 		</style>
 	</head>
 	<body>
@@ -154,17 +163,11 @@
 							<img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Subduction-en.svg" alt="">
 						</div>
 
-						<p>
-							The descending oceanic plate starts to melt at about 100 km, and the magma produced there rises to form a chain of volcanoes behind the subduction zone. When this happens where oceanic lithosphere is subducted beneath a continent, the result is a chain of volcanoes inland from the trench, where the descending plate reaches the required depth. This is called a “continental arc”.  
-						
-						The <strong>Cascade</strong> volcanoes are an excellent example of this, as are the <strong>Andes</strong>, or the <strong>Aleutian</strong> Volcanoes. 
-						
-						</p>
-						
+						<p>The descending oceanic plate starts to melt at about 100 km, and the magma produced there rises to form a chain of volcanoes behind the subduction zone. When this happens where oceanic lithosphere is subducted beneath a continent, the result is a chain of volcanoes inland from the trench, where the descending plate reaches the required depth. This is called a “continental arc”.  The <strong>Cascade</strong> volcanoes are an excellent example of this, as are the <strong>Andes</strong>, or the <strong>Aleutian</strong> Volcanoes.</p>
 					</section>
 					<section>
 						<h3>Volcanic Island Arc</h3>
-						<div class="img-content">
+						<div class="img-container">
 							<img src="https://esciencework.weebly.com/uploads/2/6/4/1/26410401/1284836_orig.jpg" alt="">
 						</div>
 						
@@ -215,35 +218,12 @@
 						<p>There have been at least four cycles over the last two billion years, and the Atlantic Basin (the youngest, with the passive margins) was born in the breakup of the last supercontinent (Pangea) 200 million years ago.</p>
 					</section>
 					
-					<section>
+					<section data-state="youtube-slide">
 						<h3>Wilson Cycle Animation</h3>
 						<div id="muteYouTubeVideoPlayer"></div>
 						<script async src="https://www.youtube.com/iframe_api"></script>
 						<script>
-							function onYouTubeIframeAPIReady() {
-								var player;
-								player = new YT.Player('muteYouTubeVideoPlayer', {
-									videoId: 'I_q3sAcuzIY', // YouTube Video ID
-									width: 853,               // Player width (in px)
-									height: 505,              // Player height (in px)
-									playerVars: {
-										autoplay: 1,        // Auto-play the video on load
-										controls: 1,        // Show pause/play buttons in player
-										showinfo: 0,        // Hide the video title
-										modestbranding: 1,  // Hide the Youtube Logo
-										loop: 1,            // Run the video in a loop
-										fs: 0,              // Hide the full screen button
-										cc_load_policy: 0, // Hide closed captions
-										iv_load_policy: 3,  // Hide the Video Annotations
-										autohide: 0         // Hide video controls when playing
-									},
-									events: {
-										onReady: function(e) {
-											e.target.mute();
-										}
-									}
-								});
-							}
+
 						</script>
 					</section>
 				</section>
@@ -316,6 +296,33 @@
 				maxScale: 1
 			});
 
+			Reveal.addEventListener( 'youtube-slide', function( event ) {
+				let player;
+				player = new YT.Player('muteYouTubeVideoPlayer', {
+					videoId: 'I_q3sAcuzIY', // YouTube Video ID
+					width: 853,             // Player width (in px)
+					height: 505,            // Player height (in px)
+					playerVars: {
+						autoplay: 1,        // Auto-play the video on load
+						controls: 1,        // Show pause/play buttons in player
+						showinfo: 0,        // Hide the video title
+						modestbranding: 1,  // Hide the Youtube Logo
+						loop: 1,            // Run the video in a loop
+						fs: 0,              // Hide the full screen button
+						cc_load_policy: 0,  // Hide closed captions
+						iv_load_policy: 3,  // Hide the Video Annotations
+						autohide: 0         // Hide video controls when playing
+					},
+
+					events: {
+						onReady: function(e) {
+							e.target.mute();
+						}
+					}
+				});
+			});
+
 		</script>
+
 	</body>
 </html>
